@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "65510b5755590f4f54c7eb7b"
+  },
+  "id_propietario": "6551074055590f4f54c7eb68",
+  "fecha_creacion": "2023-08-08",
+  "estado": "Publico",
+  "videos": [
+    {
+      "id_video": "6551091b55590f4f54c7eb75"
+    },
+    {
+      "id_video": "655107c355590f4f54c7eb72"
+    }
+  ]
+}]

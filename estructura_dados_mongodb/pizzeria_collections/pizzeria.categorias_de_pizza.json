@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "655117fc55590f4f54c7ebbd"
+  },
+  "nombre": "Vegetarianas"
+},
+{
+  "_id": {
+    "$oid": "6551181655590f4f54c7ebbe"
+  },
+  "nombre": "Veganas"
+},
+{
+  "_id": {
+    "$oid": "6551181c55590f4f54c7ebbf"
+  },
+  "nombre": "Sin gluten"
+},
+{
+  "_id": {
+    "$oid": "6551182155590f4f54c7ebc0"
+  },
+  "nombre": "Con carne"
+}]

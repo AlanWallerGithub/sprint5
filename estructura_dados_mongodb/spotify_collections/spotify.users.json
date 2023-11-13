@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "654ff0b720f68656b13968df"
+  },
+  "email": "alberto.sanchez@gmail.com",
+  "password": "123456",
+  "username": "alberto_sanchez92",
+  "fecha_nacimiento": "1999-11-21",
+  "genero": "Masculino",
+  "pais": "España",
+  "codigo_postal": "08005",
+  "artistas_seguidos": [
+    {
+      "id_artista": "6550f0b755590f4f54c7eb25"
+    },
+    {
+      "id_artista": "6550f0b755590f4f54c7eb26"
+    }
+  ],
+  "discos_preferidos": [
+    {
+      "nombre_disco": "Dardo de disco",
+      "id_artista": "6550f0b755590f4f54c7eb25"
+    }
+  ],
+  "canciones_preferidas": [
+    {
+      "nombre_cancion": "Pantalla",
+      "id_artista": "6550f0b755590f4f54c7eb25"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6550ee9855590f4f54c7eb22"
+  },
+  "email": "maria.rodriguez@gmail.com",
+  "password": "123456",
+  "username": "maria123",
+  "fecha_nacimiento": "1996-11-21",
+  "genero": "Femenino",
+  "pais": "España",
+  "codigo_postal": "08006",
+  "tipo_usuario": "Free",
+  "artistas_seguidos": [
+    {
+      "id_artista": "6550f0b755590f4f54c7eb26"
+    }
+  ],
+  "discos_preferidos": null,
+  "canciones_preferidas": null
+}]
