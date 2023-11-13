@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "655283262df11e9b2e6c358e"
+  },
+  "fecha_pedido": "2023-03-03",
+  "pedido_a_domicilio": true,
+  "productos": [
+    {
+      "id_producto": "655284412df11e9b2e6c3594"
+    },
+    {
+      "id_producto": "6551174055590f4f54c7ebba"
+    }
+  ],
+  "precio_total": 15,
+  "fecha_entrega": "2023-03-03",
+  "id_repartidor": "6551167e55590f4f54c7ebaf",
+  "id_cliente_pedido": "6551114f55590f4f54c7eba7"
+}]

@@ -15,7 +15,8 @@
     {
       "id_empleado": "6551161555590f4f54c7ebad"
     }
-  ]
+  ],
+  "pedidos_realizados": null
 },
 {
   "_id": {
@@ -30,6 +31,11 @@
   "empleados": [
     {
       "id_empleado": "6551167e55590f4f54c7ebaf"
+    }
+  ],
+  "pedidos_recibidos": [
+    {
+      "id_pedido": "655283262df11e9b2e6c358e"
     }
   ]
 }]

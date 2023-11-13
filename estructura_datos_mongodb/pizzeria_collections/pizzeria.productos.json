@@ -18,4 +18,14 @@
   "id_categoria_pizza": "655117fc55590f4f54c7ebbd",
   "imagen": "./img/pizzas/margarita.jpg",
   "precio": 10
+},
+{
+  "_id": {
+    "$oid": "655284412df11e9b2e6c3594"
+  },
+  "tipo": "Bebida",
+  "nombre": "Bebida de naranja",
+  "descripcion": "Bebida con trozos de naranja",
+  "imagen": "./img/bebidas/bebida_naranja.jpg",
+  "precio": 5
 }]
