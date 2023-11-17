@@ -1,29 +1,22 @@
-use pizzeria;
+conn = new Mongo();
+db = conn.getDB("pizzeria");
 
 db.createCollection("categorias_de_pizza");
 
 let categorias_de_pizza = [{
-  "_id": {
-    "$oid": "655117fc55590f4f54c7ebbd"
-  },
+  "_id": new ObjectId("655117fc55590f4f54c7ebbd"),
   "nombre": "Vegetarianas"
 },
 {
-  "_id": {
-    "$oid": "6551181655590f4f54c7ebbe"
-  },
+  "_id": new ObjectId("6551181655590f4f54c7ebbe"),
   "nombre": "Veganas"
 },
 {
-  "_id": {
-    "$oid": "6551181c55590f4f54c7ebbf"
-  },
+  "_id": new ObjectId("6551181c55590f4f54c7ebbf"),
   "nombre": "Sin gluten"
 },
 {
-  "_id": {
-    "$oid": "6551182155590f4f54c7ebc0"
-  },
+  "_id": new ObjectId("6551182155590f4f54c7ebc0"),
   "nombre": "Con carne"
 }]
 db.categorias_de_pizza.insertMany(categorias_de_pizza);
@@ -32,9 +25,7 @@ db.categorias_de_pizza.insertMany(categorias_de_pizza);
 db.createCollection("clientes");
 
 let clientes = [{
-  "_id": {
-    "$oid": "6551114f55590f4f54c7eba7"
-  },
+  "_id": new ObjectId("6551114f55590f4f54c7eba7"),
   "nombre": "Claudio",
   "apellido": "Santamor",
   "direccion": {
@@ -46,9 +37,7 @@ let clientes = [{
   "telefono": "978654567"
 },
 {
-  "_id": {
-    "$oid": "655111e055590f4f54c7eba8"
-  },
+  "_id": new ObjectId("655111e055590f4f54c7eba8"),
   "nombre": "Paradela",
   "apellido": "Santamor",
   "direccion": {
@@ -65,9 +54,7 @@ db.clientes.insertMany(clientes);
 db.createCollection("empleados");
 
 let empleados = [{
-  "_id": {
-    "$oid": "6551161555590f4f54c7ebad"
-  },
+  "_id": new ObjectId("6551161555590f4f54c7ebad"),
   "nombre": "Santiago",
   "apellido": "Caradura",
   "nif": "87564536H",
@@ -75,9 +62,7 @@ let empleados = [{
   "tipo_empleado": "Cocina"
 },
 {
-  "_id": {
-    "$oid": "6551167155590f4f54c7ebae"
-  },
+  "_id": new ObjectId("6551167155590f4f54c7ebae"),
   "nombre": "Marcela",
   "apellido": "Santiña Perez",
   "nif": "36574567J",
@@ -85,9 +70,7 @@ let empleados = [{
   "tipo_empleado": "Reparto"
 },
 {
-  "_id": {
-    "$oid": "6551167e55590f4f54c7ebaf"
-  },
+  "_id": new ObjectId("6551167e55590f4f54c7ebaf"),
   "nombre": "Chanso",
   "apellido": "Santiña",
   "nif": "36574567J",
@@ -99,9 +82,7 @@ db.empleados.insertMany(empleados);
 db.createCollection("pedidos");
 
 let pedidos = [{
-  "_id": {
-    "$oid": "655283262df11e9b2e6c358e"
-  },
+  "_id": new ObjectId("655283262df11e9b2e6c358e"),
   "fecha_pedido": "2023-03-03",
   "pedido_a_domicilio": true,
   "productos": [
@@ -123,9 +104,7 @@ db.pedidos.insertMany(pedidos);
 db.createCollection("productos");
 
 let productos = [{
-  "_id": {
-    "$oid": "6551174055590f4f54c7ebba"
-  },
+  "_id": new ObjectId("6551174055590f4f54c7ebba"),
   "tipo": "Burger",
   "nombre": "Burger con queso",
   "descripcion": "Burger de la casa con queso",
@@ -133,9 +112,7 @@ let productos = [{
   "precio": 10
 },
 {
-  "_id": {
-    "$oid": "655117da55590f4f54c7ebbb"
-  },
+  "_id": new ObjectId("655117da55590f4f54c7ebbb"),
   "tipo": "Pizza",
   "nombre": "Pizza margarita",
   "descripcion": "Pizza sin carne",
@@ -144,9 +121,7 @@ let productos = [{
   "precio": 10
 },
 {
-  "_id": {
-    "$oid": "655284412df11e9b2e6c3594"
-  },
+  "_id": new ObjectId("655284412df11e9b2e6c3594"),
   "tipo": "Bebida",
   "nombre": "Bebida de naranja",
   "descripcion": "Bebida con trozos de naranja",
@@ -159,9 +134,7 @@ db.productos.insertMany(productos);
 db.createCollection("tiendas");
 
 let tiendas = [{
-  "_id": {
-    "$oid": "655115aa55590f4f54c7ebaa"
-  },
+  "_id": new ObjectId("655115aa55590f4f54c7ebaa"),
   "direccion": {
     "calle": "C/ Casa",
     "codigo_postal": "08045",
@@ -179,9 +152,7 @@ let tiendas = [{
   "pedidos_realizados": null
 },
 {
-  "_id": {
-    "$oid": "6551160c55590f4f54c7ebab"
-  },
+  "_id": new ObjectId("6551160c55590f4f54c7ebab"),
   "direccion": {
     "calle": "C/ Carrafo",
     "codigo_postal": "08045",

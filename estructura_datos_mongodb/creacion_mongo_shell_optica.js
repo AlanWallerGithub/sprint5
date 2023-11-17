@@ -1,52 +1,49 @@
-use opticaTest ; db.opticaTest.createCollection("clientes");
+conn = new Mongo();
+db = conn.getDB("optica");
 
-// let clientes = [{
-//   "_id": {
-//     "$oid": "65510ddb55590f4f54c7eb86"
-//   },
-//   "nombre": "Claudio Salsapeña",
-//   "direccion": {
-//     "calle": "C/ Parro",
-//     "numero_edificio": 5,
-//     "piso": 4,
-//     "puerta": 7,
-//     "ciudad": "Barcelona",
-//     "codigo_postal": "08076",
-//     "pais": "España"
-//   },
-//   "telefono": "978654567",
-//   "email": "claudio@mail.com",
-//   "fecha_registro": "1998-09-09",
-//   "cliente_recomendador": null
-// },
-// {
-//   "_id": {
-//     "$oid": "65510e9155590f4f54c7eb87"
-//   },
-//   "nombre": "Brillo Salsapeña",
-//   "direccion": {
-//     "calle": "C/ Parro",
-//     "numero_edificio": 5,
-//     "piso": 4,
-//     "puerta": 7,
-//     "ciudad": "Barcelona",
-//     "codigo_postal": "08076",
-//     "pais": "España"
-//   },
-//   "telefono": "978654567",
-//   "email": "brillo@mail.com",
-//   "fecha_registro": "1998-09-10",
-//   "cliente_recomendador": "65510ddb55590f4f54c7eb86"
-// }]
+db.createCollection("clientes");
+
+let clientes = [{
+  "_id": new ObjectId("65510ddb55590f4f54c7eb86"),
+  "nombre": "Claudio Salsapeña",
+  "direccion": {
+    "calle": "C/ Parro",
+    "numero_edificio": 5,
+    "piso": 4,
+    "puerta": 7,
+    "ciudad": "Barcelona",
+    "codigo_postal": "08076",
+    "pais": "España"
+  },
+  "telefono": "978654567",
+  "email": "claudio@mail.com",
+  "fecha_registro": "1998-09-09",
+  "cliente_recomendador": null
+},
+{
+  "_id": new ObjectId("65510e9155590f4f54c7eb87"),
+  "nombre": "Brillo Salsapeña",
+  "direccion": {
+    "calle": "C/ Parro",
+    "numero_edificio": 5,
+    "piso": 4,
+    "puerta": 7,
+    "ciudad": "Barcelona",
+    "codigo_postal": "08076",
+    "pais": "España"
+  },
+  "telefono": "978654567",
+  "email": "brillo@mail.com",
+  "fecha_registro": "1998-09-10",
+  "cliente_recomendador": "65510ddb55590f4f54c7eb86"
+}]
 db.clientes.insertMany(clientes);
 
 
 db.createCollection("empleados");
 
 let empleados = [{
-  "_id": {
-    "$oid": "65510f0355590f4f54c7eb8b"
-  },
+  "_id": new ObjectId("65510f0355590f4f54c7eb8b"),
   "nombre": "Peña Santamar"
 }]
 db.empleados.insertMany(empleados);
@@ -54,9 +51,7 @@ db.empleados.insertMany(empleados);
 db.createCollection("proveedores");
 
 let proveedores = [{
-  "_id": {
-    "$oid": "65510c5555590f4f54c7eb83"
-  },
+  "_id": new ObjectId("65510c5555590f4f54c7eb83"),
   "nombre": "Gafas Sanpere",
   "direccion": {
     "calle": "C/ Calle",
@@ -83,9 +78,7 @@ let proveedores = [{
   ]
 },
 {
-  "_id": {
-    "$oid": "65510d5555590f4f54c7eb84"
-  },
+  "_id": new ObjectId("65510d5555590f4f54c7eb84"),
   "nombre": "Gafas Adrian",
   "direccion": {
     "calle": "C/ Terre",
@@ -113,9 +106,7 @@ db.proveedores.insertMany(proveedores);
 db.createCollection("ventas");
 
 let ventas = [{
-  "_id": {
-    "$oid": "65510f3f55590f4f54c7eb8d"
-  },
+  "_id": new ObjectId("65510f3f55590f4f54c7eb8d"),
   "marca_vendida": {
     "nombre": "Marca Fantasy",
     "proveedor": "65510c5555590f4f54c7eb83"

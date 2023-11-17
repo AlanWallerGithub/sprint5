@@ -1,9 +1,0 @@
-[{
-  "_id": {
-    "$oid": "6551068c55590f4f54c7eb66"
-  },
-  "nombre_canal": "Canal de Barbara",
-  "descripcion": "Hola! Es mi canal",
-  "fecha_creacion": "2022-09-09",
-  "id_propietario": "6551074055590f4f54c7eb68"
-}]

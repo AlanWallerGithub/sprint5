@@ -1,11 +1,10 @@
-use youtube;
+conn = new Mongo();
+db = conn.getDB("youtube");
 
 db.createCollection("canales");
 
 let canales = [{
-    "_id": {
-      "$oid": "6551068c55590f4f54c7eb66"
-    },
+    "_id": new ObjectId("6551068c55590f4f54c7eb66"),
     "nombre_canal": "Canal de Barbara",
     "descripcion": "Hola! Es mi canal",
     "fecha_creacion": "2022-09-09",
@@ -16,9 +15,7 @@ db.canales.insertMany(canales);
 db.createCollection("playlists");
 
 let playlists = [{
-    "_id": {
-      "$oid": "65510b5755590f4f54c7eb7b"
-    },
+    "_id": new ObjectId("65510b5755590f4f54c7eb7b"),
     "id_propietario": "6551074055590f4f54c7eb68",
     "fecha_creacion": "2023-08-08",
     "estado": "Publico",
@@ -36,9 +33,7 @@ db.playlists.insertMany(playlists);
 db.createCollection("usuarios");
 
 let usuarios = [{
-    "_id": {
-      "$oid": "655105c955590f4f54c7eb64"
-    },
+    "_id": new ObjectId("655105c955590f4f54c7eb64"),
     "username": "torrezno42",
     "email": "torr@mail.com",
     "fecha_nacimiento": "1992-08-08",
@@ -50,9 +45,7 @@ let usuarios = [{
     }
   },
   {
-    "_id": {
-      "$oid": "6551074055590f4f54c7eb68"
-    },
+    "_id": new ObjectId("6551074055590f4f54c7eb68"),
     "username": "barbara2",
     "email": "bar@bar.com",
     "fecha_nacimiento": "1993-08-08",
@@ -66,9 +59,7 @@ db.usuarios.insertMany(usuarios);
 db.createCollection("videos");
 
 let videos = [{
-    "_id": {
-      "$oid": "655107c355590f4f54c7eb72"
-    },
+    "_id": new ObjectId("655107c355590f4f54c7eb72"),
     "titulo": "Primer video",
     "descripcion": "Mi primer video!",
     "tamaño": "567MB",
@@ -114,9 +105,7 @@ let videos = [{
     ]
   },
   {
-    "_id": {
-      "$oid": "6551091b55590f4f54c7eb75"
-    },
+    "_id": new ObjectId("6551091b55590f4f54c7eb75"),
     "titulo": "Segundo video",
     "descripcion": "Mi segundo!",
     "tamaño": "564MB",

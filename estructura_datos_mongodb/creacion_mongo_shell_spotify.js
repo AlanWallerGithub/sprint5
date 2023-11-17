@@ -1,11 +1,10 @@
-use spotify;
+conn = new Mongo();
+db = conn.getDB("spotify");
 
 db.createCollection("artists");
 
 let artists = [{
-    "_id": {
-      "$oid": "6550f0b755590f4f54c7eb25"
-    },
+    "_id": new ObjectId("6550f0b755590f4f54c7eb25"),
     "nombre": "Casablanca",
     "imagen_artista": "./img/artists/casablanca.jpg",
     "albums": [
@@ -83,9 +82,7 @@ let artists = [{
     ]
   },
   {
-    "_id": {
-      "$oid": "6550f0b755590f4f54c7eb26"
-    },
+    "_id": new ObjectId("6550f0b755590f4f54c7eb26"),
     "nombre": "Bambolero",
     "imagen_artista": "./img/bambolero.jpg",
     "albums": [
@@ -138,9 +135,7 @@ db.artists.insertMany(artists);
 db.createCollection("cuentas_bancarias");
 
 let cuentas_bancarias = [{
-    "_id": {
-      "$oid": "6551016855590f4f54c7eb58"
-    },
+    "_id": new ObjectId("6551016855590f4f54c7eb58"),
     "id_usuario": "654ff0b720f68656b13968df",
     "numero_tarjeta": "756 4567 657 876",
     "fecha_caducidad_tarjeta": "2025-09-09",
@@ -153,9 +148,7 @@ db.cuentas_bancarias.insertMany(cuentas_bancarias);
 db.createCollection("cuentas_paypal");
 
 let cuentas_paypal = [{
-    "_id": {
-      "$oid": "6551012c55590f4f54c7eb56"
-    },
+    "_id": new ObjectId("6551012c55590f4f54c7eb56"),
     "id_usuario": "654ff0b720f68656b13968df",
     "paypal_username": "torro23"
   }]
@@ -166,9 +159,7 @@ db.cuentas_paypal.insertMany(cuentas_paypal);
 db.createCollection("playlists");
 
 let playlists = [{
-    "_id": {
-      "$oid": "6550f81655590f4f54c7eb33"
-    },
+    "_id": new ObjectId("6550f81655590f4f54c7eb33"),
     "titulo": "Canciones para dormir bien",
     "numero_canciones": 2,
     "fecha_creacion": "2013-04-12",
@@ -192,9 +183,7 @@ let playlists = [{
     }
   },
   {
-    "_id": {
-      "$oid": "6550f81655590f4f54c7eb34"
-    },
+    "_id": new ObjectId("6550f81655590f4f54c7eb34"),
     "titulo": "Mis canciones preferidas",
     "numero_canciones": 1,
     "fecha_creacion": "2012-04-12",
@@ -218,9 +207,7 @@ db.playlists.insertMany(playlists);
 db.createCollection("subscripciones_premium");
 
 let subscripciones_premium = [{
-    "_id": {
-      "$oid": "6550fe5655590f4f54c7eb50"
-    },
+    "_id": new ObjectId("6550fe5655590f4f54c7eb50"),
     "id_usuario": "654ff0b720f68656b13968df",
     "fecha_inicio_subscripcion": "2022-04-04",
     "fecha_siguiente_renovacion": "2024-04-04",
@@ -246,9 +233,7 @@ db.subscripciones_premium.insertMany(subscripciones_premium);
 db.createCollection("users");
 
 let users = [{
-  "_id": {
-    "$oid": "654ff0b720f68656b13968df"
-  },
+  "_id": new ObjectId("654ff0b720f68656b13968df"),
   "email": "alberto.sanchez@gmail.com",
   "password": "123456",
   "username": "alberto_sanchez92",
@@ -278,9 +263,7 @@ let users = [{
   ]
 },
 {
-  "_id": {
-    "$oid": "6550ee9855590f4f54c7eb22"
-  },
+  "_id": new ObjectId("6550ee9855590f4f54c7eb22"),
   "email": "maria.rodriguez@gmail.com",
   "password": "123456",
   "username": "maria123",
