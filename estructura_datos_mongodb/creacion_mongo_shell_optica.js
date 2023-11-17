@@ -1,46 +1,43 @@
-use optica;
+use opticaTest ; db.opticaTest.createCollection("clientes");
 
-
-db.createCollection("clientes");
-
-let clientes = [{
-  "_id": {
-    "$oid": "65510ddb55590f4f54c7eb86"
-  },
-  "nombre": "Claudio Salsapeña",
-  "direccion": {
-    "calle": "C/ Parro",
-    "numero_edificio": 5,
-    "piso": 4,
-    "puerta": 7,
-    "ciudad": "Barcelona",
-    "codigo_postal": "08076",
-    "pais": "España"
-  },
-  "telefono": "978654567",
-  "email": "claudio@mail.com",
-  "fecha_registro": "1998-09-09",
-  "cliente_recomendador": null
-},
-{
-  "_id": {
-    "$oid": "65510e9155590f4f54c7eb87"
-  },
-  "nombre": "Brillo Salsapeña",
-  "direccion": {
-    "calle": "C/ Parro",
-    "numero_edificio": 5,
-    "piso": 4,
-    "puerta": 7,
-    "ciudad": "Barcelona",
-    "codigo_postal": "08076",
-    "pais": "España"
-  },
-  "telefono": "978654567",
-  "email": "brillo@mail.com",
-  "fecha_registro": "1998-09-10",
-  "cliente_recomendador": "65510ddb55590f4f54c7eb86"
-}]
+// let clientes = [{
+//   "_id": {
+//     "$oid": "65510ddb55590f4f54c7eb86"
+//   },
+//   "nombre": "Claudio Salsapeña",
+//   "direccion": {
+//     "calle": "C/ Parro",
+//     "numero_edificio": 5,
+//     "piso": 4,
+//     "puerta": 7,
+//     "ciudad": "Barcelona",
+//     "codigo_postal": "08076",
+//     "pais": "España"
+//   },
+//   "telefono": "978654567",
+//   "email": "claudio@mail.com",
+//   "fecha_registro": "1998-09-09",
+//   "cliente_recomendador": null
+// },
+// {
+//   "_id": {
+//     "$oid": "65510e9155590f4f54c7eb87"
+//   },
+//   "nombre": "Brillo Salsapeña",
+//   "direccion": {
+//     "calle": "C/ Parro",
+//     "numero_edificio": 5,
+//     "piso": 4,
+//     "puerta": 7,
+//     "ciudad": "Barcelona",
+//     "codigo_postal": "08076",
+//     "pais": "España"
+//   },
+//   "telefono": "978654567",
+//   "email": "brillo@mail.com",
+//   "fecha_registro": "1998-09-10",
+//   "cliente_recomendador": "65510ddb55590f4f54c7eb86"
+// }]
 db.clientes.insertMany(clientes);
 
 
