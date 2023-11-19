@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `spotify`.`album` (
   `idalbum` INT NOT NULL AUTO_INCREMENT,
   `titulo` VARCHAR(45) NOT NULL,
   `fecha_lanzamiento` DATE NOT NULL,
-  `imagen_portada` VARCHAR(45) NOT NULL,
+  `imagen_portada` VARCHAR(100) NOT NULL,
   `artista` INT NOT NULL,
   PRIMARY KEY (`idalbum`),
   UNIQUE INDEX `idalbum_UNIQUE` (`idalbum` ASC) VISIBLE,
@@ -356,3 +356,181 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`tipo_usuario`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`tipo_usuario` (`idtipo_usuario`, `tipo_usuario`) VALUES (1, 'Free');
+INSERT INTO `spotify`.`tipo_usuario` (`idtipo_usuario`, `tipo_usuario`) VALUES (2, 'Premium');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`user`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`user` (`iduser`, `email`, `password`, `username`, `fecha_nacimiento`, `genero`, `pais`, `codigo_postal`, `tipo_usuario`) VALUES (1, 'chancha@gmail.com', '12345', 'chancho_pastor', '1980-09-09', 'Masculino', 'España', '08045', 1);
+INSERT INTO `spotify`.`user` (`iduser`, `email`, `password`, `username`, `fecha_nacimiento`, `genero`, `pais`, `codigo_postal`, `tipo_usuario`) VALUES (2, 'casadoro@gmail.com', '123456', 'casadoro2', '1980-04-04', 'Masculino', 'España', '08035', 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`metodo_pago`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`metodo_pago` (`idmetodo_pago`, `tipo_pago`) VALUES (1, 'Tarjeta');
+INSERT INTO `spotify`.`metodo_pago` (`idmetodo_pago`, `tipo_pago`) VALUES (2, 'Paypal');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`subscriptions`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`subscriptions` (`idsubscriptions`, `user_id`, `fecha_inicio`, `fecha_renovacion`, `metodo_pago`) VALUES (1, 2, '2021-03-03', '2024-03-03', 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`tarjetas`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`tarjetas` (`idtarjetas`, `fecha_caducidad`, `codigo_seguridad`, `numero_tarjeta`, `iduser`) VALUES (1, '2025-04-04', '465', '253475867', 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`cuentas_paypal`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`cuentas_paypal` (`idcuentas_paypal`, `usuario_paypal`, `iduser`) VALUES (1, 'micuenta', 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`pagos_premium`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`pagos_premium` (`idpagos_premium`, `fecha_pago`, `precio_total`, `idusuario`) VALUES (1, '2021-03-03', 31, 2);
+INSERT INTO `spotify`.`pagos_premium` (`idpagos_premium`, `fecha_pago`, `precio_total`, `idusuario`) VALUES (2, '2022-03-03', 31, 2);
+INSERT INTO `spotify`.`pagos_premium` (`idpagos_premium`, `fecha_pago`, `precio_total`, `idusuario`) VALUES (3, '2023-03-03', 31, 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`playlists_eliminadas`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`playlists_eliminadas` (`idplaylists_eliminadas`, `fecha_eliminacion`) VALUES (1, '2022-05-05');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`playlists`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`playlists` (`idplaylists`, `titulo`, `numero_canciones`, `fecha_creacion`, `idusuario`, `idplaylists_eliminadas`) VALUES (1, 'Playlist de cosas buenas', 2, '2022-03-03', 1, NULL);
+INSERT INTO `spotify`.`playlists` (`idplaylists`, `titulo`, `numero_canciones`, `fecha_creacion`, `idusuario`, `idplaylists_eliminadas`) VALUES (2, 'Playlist borrosa', 5, '2022-03-03', 2, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`artistas`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`artistas` (`idartistas`, `nombre`, `imagen_artista`) VALUES (1, 'Casablanca', './img/artists/casablanca.jpg');
+INSERT INTO `spotify`.`artistas` (`idartistas`, `nombre`, `imagen_artista`) VALUES (2, 'Julio Balazar', './img/artists/julio_balanzar.jpg');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`album`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`album` (`idalbum`, `titulo`, `fecha_lanzamiento`, `imagen_portada`, `artista`) VALUES (1, 'Casablanca Songs', '2022-03-03', './img/artists/casablanca/albums/casablanca_songs.jpg', 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`canciones`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`canciones` (`idcanciones`, `titulo`, `album`, `artista`, `duracion`, `reproducciones`) VALUES (1, 'Santiago', 1, 1, '03:04', 54);
+INSERT INTO `spotify`.`canciones` (`idcanciones`, `titulo`, `album`, `artista`, `duracion`, `reproducciones`) VALUES (2, 'Pac', 1, 1, '02:03', 43);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`canciones_compartidas_en_playlist`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`canciones_compartidas_en_playlist` (`idcanciones_compartidas_en_playlist`, `idplaylists`, `usuario_que_la_compartio`, `fecha_de_compartir`, `cancion`) VALUES (1, 1, 2, '2023-03-03', 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`artistas_seguidos`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`artistas_seguidos` (`idartistas`, `iduser`) VALUES (1, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`artistas_relacionados`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`artistas_relacionados` (`idartista1`, `idartista2`) VALUES (1, 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`canciones_preferidas`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`canciones_preferidas` (`idcancion`, `idusuario`, `nombre_cancion`) VALUES (1, 1, 'Santiago');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `spotify`.`albumes_preferidos`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `spotify`;
+INSERT INTO `spotify`.`albumes_preferidos` (`idalbum`, `idusuario`, `nombre_album`) VALUES (1, 1, 'Casablanca Songs');
+
+COMMIT;
+
